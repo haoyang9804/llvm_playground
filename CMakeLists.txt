@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(LLVM-play)
 
+message(${CMAKE_SYSTEM_NAME})
 
 find_package(LLVM REQUIRED CONFIG)
 
