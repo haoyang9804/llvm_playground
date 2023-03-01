@@ -1,7 +1,15 @@
 cmake_minimum_required(VERSION 3.10)
-project(LLVM-play)
 
 message(${CMAKE_SYSTEM_NAME})
+
+if (CMAKE_HOST_SYSTEM_NAME STREQUAL "Darwin")
+  set(CMAKE_CXX_COMPILER /opt/homebrew/Cellar/llvm@11/11.1.0_4/bin/clang++)
+  set(CMAKE_C_COMPILER /opt/homebrew/Cellar/llvm@11/11.1.0_4/bin/clang)
+# elseif(CMAKE_HOST_SYSTEM_NAME STREQUAL "Linux")
+endif()
+
+
+project(LLVM-play)
 
 find_package(LLVM REQUIRED CONFIG)
 
