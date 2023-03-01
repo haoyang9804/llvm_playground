@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.10)
 
-message(${CMAKE_SYSTEM_NAME})
-
 if (CMAKE_HOST_SYSTEM_NAME STREQUAL "Darwin")
   set(CMAKE_CXX_COMPILER /opt/homebrew/Cellar/llvm@11/11.1.0_4/bin/clang++)
   set(CMAKE_C_COMPILER /opt/homebrew/Cellar/llvm@11/11.1.0_4/bin/clang)
-# elseif(CMAKE_HOST_SYSTEM_NAME STREQUAL "Linux")
+elseif(CMAKE_HOST_SYSTEM_NAME STREQUAL "Linux")
+  set(CMAKE_CXX_COMPILER /home/gakki/llvm-project/build-play/bin/clang++)
+  set(CMAKE_C_COMPILER /home/gakki/llvm-project/build-play/bin/clang)
 endif()
 
 
