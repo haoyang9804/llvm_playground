@@ -4,8 +4,8 @@ if (CMAKE_HOST_SYSTEM_NAME STREQUAL "Darwin")
   set(CMAKE_CXX_COMPILER /opt/homebrew/Cellar/llvm@11/11.1.0_4/bin/clang++)
   set(CMAKE_C_COMPILER /opt/homebrew/Cellar/llvm@11/11.1.0_4/bin/clang)
 elseif(CMAKE_HOST_SYSTEM_NAME STREQUAL "Linux")
-  set(CMAKE_CXX_COMPILER /home/gakki/llvm-project/build-play/bin/clang++)
-  set(CMAKE_C_COMPILER /home/gakki/llvm-project/build-play/bin/clang)
+  set(CMAKE_CXX_COMPILER /home/gakki/llvm-install-byClang10-rtti/bin/clang++)
+  set(CMAKE_C_COMPILER /home/gakki/llvm-install-byClang10-rtti/bin/clang)
 endif()
 
 
