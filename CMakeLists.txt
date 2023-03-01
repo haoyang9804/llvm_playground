@@ -16,5 +16,4 @@ find_package(LLVM REQUIRED CONFIG)
 message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
 message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
 
-add_executable(parseCommandLine parseCommandLine.cpp)
-target_link_libraries(parseCommandLine LLVMOption LLVMSupport LLVMCore )
+add_subdirectory(CommandLine)
