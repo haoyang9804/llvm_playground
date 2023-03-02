@@ -3,6 +3,7 @@
 #include "clang/Frontend/CompilerInstance.h"
 #include "clang/Frontend/FrontendAction.h"
 #include "clang/Tooling/Tooling.h"
+#include "FileReader.hpp"
 
 using namespace clang;
 
@@ -50,6 +51,7 @@ public:
 
 int main(int argc, char **argv) {
   if (argc > 1) {
-    clang::tooling::runToolOnCode(new FindNamedClassAction, argv[1]);
+    std::unique_ptr<FindNamedClassAction> fnca_ptr = std::make_unique<FindNamedClassAction>();
+    clang::tooling::runToolOnCode(std::move(fnca_ptr), readFile(argv[1]));
   }
 }
