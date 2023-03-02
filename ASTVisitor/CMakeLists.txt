@@ -1,9 +1,12 @@
+add_subdirectory(Helper)
 
+add_clang_executable(astplayer ASTplayer.cpp)
 
-add_clang_executable(astplayer ASTplayer.cpp FileReader.cpp)
+target_include_directories(astplayer PRIVATE Helper)
 
 target_link_libraries(astplayer
   PRIVATE
+  filereader
   clangAST
   clangBasic
   clangFrontend
